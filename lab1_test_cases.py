@@ -16,6 +16,9 @@ class TestLab1(unittest.TestCase):
     def test_max_list_iter_all_same(self): 
         self.assertEqual(max_list_iter([-1,-1,-1,-1]),-1)
     
+    def test_max_list_iter_all_one_item(self):                                      
+        self.assertEqual(max_list_iter([-1]),-1)
+
     def test_max_list_iter_empty(self): #Checks for None when list is empty
         self.assertEqual(max_list_iter([]),None)
     
@@ -27,6 +30,12 @@ class TestLab1(unittest.TestCase):
     def test_reverse_rec(self):
         self.assertEqual(reverse_rec([1,2,3]),[3,2,1])
     
+    def test_reverse_rec_one_item(self):                                                 
+        self.assertEqual(reverse_rec([1]),[1])
+
+    def test_reverse_rec_empty(self):                                                 
+        self.assertEqual(reverse_rec([]),[])
+
     def test_reverse_rec_none(self): 
         tlist = None
         with self.assertRaises(ValueError): #Used to check for exception
